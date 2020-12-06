@@ -17,7 +17,7 @@ TcpVenoStateVariables::TcpVenoStateVariables()
     v_incr = 0;
     v_diff = 0;
     v_cntRTT = 0;
-    v_beta = 3;
+    v_beta = 6;
     v_begseq = 0;
     v_begtime = 0;
 }
@@ -50,7 +50,8 @@ TcpVeno::TcpVeno() : TcpReno(),
 
 void TcpVeno::recalculateSlowStartThreshold()
 {
-  if (state->v_diff < state->v_beta) {
+  EV_INFO << "\nVeno recalculate ssthresh: v_diff = " << state->v_diff << ", snd_mss = " << state->snd_mss<< "\n";
+  if (state->v_diff < state->v_beta * state->snd_mss) {
     // random loss due to bit errors is most likely to have occured
     // we cut down ssthres by 1/5 cwnd
     EV_INFO << "Random loss due to bit errors is mostly to have occured. Cutting down ssthresh by 1/5 of cwnd\n";
@@ -200,10 +201,10 @@ void TcpVeno::receivedDataAck(uint32 firstSeqAcked)
                   state->v_diff = diff;
                   // Available bandwith is not fully utilized
                   // Increase cwnd by 1 every RTT
-                  if (diff < state->v_beta) {
+                  if (diff < state->v_beta * state->snd_mss) {
                       // perform Congestion Avoidance (RFC 2581)
                       EV_INFO << "Availabel bandwith is not fully utilized, increase cwnd by 1 every RTT\n";
-                      uint32 incr = state->snd_mss * state->snd_mss / state->snd_cwnd;
+                      uint32 incr = (state->snd_mss * state->snd_mss) / state->snd_cwnd;
                       if (incr == 0) incr = 1;
                       state->snd_cwnd += incr;
                       EV_INFO << "New cwnd = " << state->snd_cwnd << "\n";
@@ -307,7 +308,7 @@ void TcpVeno::receivedDuplicateAck()
     state->regions.clearTo(state->snd_una);
 
     if (state->dupacks == DUPTHRESH) {    
-        EV_INFO << "Reno on dupAcks == DUPTHRESH(=3): perform Fast Retransmit, and enter Fast Recovery:";
+        EV_INFO << "Veno on dupAcks == DUPTHRESH(=3): perform Fast Retransmit, and enter Fast Recovery:";
 
         if (state->sack_enabled) {
             if (state->recoveryPoint == 0 || seqGE(state->snd_una, state->recoveryPoint)) {    // HighACK = snd_una
@@ -355,7 +356,7 @@ void TcpVeno::receivedDuplicateAck()
         // additional segment that has left the network
         //
         state->snd_cwnd += state->snd_mss;
-        EV_DETAIL << "Reno on dupAcks > DUPTHRESH(=3): Fast Recovery: inflating cwnd by SMSS, new cwnd=" << state->snd_cwnd << "\n";
+        EV_DETAIL << "Veno on dupAcks > DUPTHRESH(=3): Fast Recovery: inflating cwnd by SMSS, new cwnd=" << state->snd_cwnd << "\n";
 
         conn->emit(cwndSignal, state->snd_cwnd);
 
