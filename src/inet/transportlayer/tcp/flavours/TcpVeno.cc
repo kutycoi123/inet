@@ -53,7 +53,7 @@ void TcpVeno::recalculateSlowStartThreshold()
   if (state->v_diff < state->v_beta) {
     // random loss due to bit errors is most likely to have occured
     // we cut down ssthres by 1/5 cwnd
-    EV_INFO << "Random loss due to bit errors is mostly to have occured. Cuttingdown ssthresh by 1/5 of cwnd\n";
+    EV_INFO << "Random loss due to bit errors is mostly to have occured. Cutting down ssthresh by 1/5 of cwnd\n";
     double tmp = 4.0/5.0;
     uint32 flight_size = std::min(state->snd_cwnd, state->snd_wnd);  
     state->ssthresh = std::max(static_cast<uint32> (flight_size * tmp),

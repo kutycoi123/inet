@@ -1,5 +1,5 @@
-#ifndef __INET_TCPVEGAS_H
-#define __INET_TCPVEGAS_H
+#ifndef __INET_TCPVENO_H
+#define __INET_TCPVENO_H
 #include "inet/transportlayer/tcp/flavours/TcpBaseAlg.h"
 #include "inet/transportlayer/tcp/flavours/TcpReno.h"
 #include "inet/transportlayer/tcp/flavours/TcpTahoeRenoFamily.h"
