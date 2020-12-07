@@ -1,7 +1,3 @@
-//
-// This program is property of its copyright holder. All rights reserved.
-//
-
 package inet.cmpt471.WirelessAndWiredHosts;
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
