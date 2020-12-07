@@ -113,7 +113,9 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="inet/applications/voipstream|inet/emulation|inet/linklayer/ext|inet/transportlayer/tcp_nsc|inet/transportlayer/tcp_lwip|inet/routing/extras|transport/tcp_nsc|transport/tcp_lwip" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="cmpt471"/>
+                        						
+                        <entry excluding="inet/linklayer/ext|inet/transportlayer/tcp_lwip|inet/transportlayer/tcp_nsc|inet/emulation|inet/clock/oscillator|transport/tcp_lwip|inet/clock/model|inet/applications/voipstream|inet/clock/base|transport/tcp_nsc|inet/routing/extras|inet/clock/common" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
                         					
                     </sourceEntries>
                     				
@@ -227,7 +229,9 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="inet/applications/voipstream|inet/emulation|inet/linklayer/ext|inet/transportlayer/tcp_nsc|inet/transportlayer/tcp_lwip|inet/routing/extras|transport/tcp_nsc|transport/tcp_lwip" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="cmpt471"/>
+                        						
+                        <entry excluding="inet/linklayer/ext|inet/transportlayer/tcp_lwip|inet/transportlayer/tcp_nsc|inet/emulation|inet/clock/oscillator|transport/tcp_lwip|inet/clock/model|inet/applications/voipstream|inet/clock/base|transport/tcp_nsc|inet/routing/extras|inet/clock/common" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
                         					
                     </sourceEntries>
                     				
