@@ -14,6 +14,7 @@ network WirelessAndWiredHosts
 {
     parameters:
         double per = default(0);
+        int n;
     types:
         channel C extends DatarateChannel
         {
@@ -35,10 +36,11 @@ network WirelessAndWiredHosts
             parameters:
                 @display("p=85,161;is=s");
         }
-        wirelessHost1: WirelessHost {
+        wirelessHost1[n]: WirelessHost {
             parameters:
-                @display("p=210,95");
+                @display("p=100,100");
         }
+
         wiredHost2: StandardHost {
             parameters:
                 @display("p=424,176");
