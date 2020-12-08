@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/inet/cmpt471/MultipleClientsWithOneRouter/results/inet-veno-ten-clients-0-*.vec"/>
+    <inputs name="/inet/cmpt471/MultipleClientsWithOneRouter/results/inet-veno-ten-clients-0-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="Veno-Client-10">
+      <items xsi:type="scave:Group" name="RTT">
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[0].tcp.conn-33) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[1].tcp.conn-34) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[2].tcp.conn-35) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[3].tcp.conn-36) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[4].tcp.conn-37) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[5].tcp.conn-38) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[6].tcp.conn-39) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="rtt:vector"/>
+        <items xsi:type="scave:Apply" operation="mean"/>
+        <items xsi:type="scave:LineChart" name="rtt mean" lineNameFormat=""/>
+      </items>
+      <items xsi:type="scave:Group" name="cwnd">
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[0].tcp.conn-33) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[1].tcp.conn-34) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[2].tcp.conn-35) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[3].tcp.conn-36) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[4].tcp.conn-37) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[5].tcp.conn-38) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[6].tcp.conn-39) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="cwnd:vector"/>
+        <items xsi:type="scave:Apply" operation="mean"/>
+        <items xsi:type="scave:LineChart" name="cwnd mean" lineNameFormat=""/>
+      </items>
+      <items xsi:type="scave:Group" name="rcv Window">
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[0].tcp.conn-33) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[1].tcp.conn-34) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[2].tcp.conn-35) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[3].tcp.conn-36) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[4].tcp.conn-37) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[5].tcp.conn-38) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[6].tcp.conn-39) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[7].tcp.conn-40) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[8].tcp.conn-41) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[9].tcp.conn-42) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-43) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-44) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-45) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-46) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-47) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-48) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-49) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-50) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.tcp.conn-51) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="rcvWnd:vector"/>
+      </items>
+      <items xsi:type="scave:Group" name="End to End Delay">
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[0].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[1].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[2].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[3].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[4].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[5].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[6].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[7].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[8].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[9].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_43) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_44) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_45) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_46) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_47) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_48) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_49) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0].thread_50) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:HistogramChart" name="endToEndDelay:histogram"/>
+      </items>
+      <items xsi:type="scave:Group">
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[1].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[2].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[3].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[4].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[5].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[6].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[7].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[8].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[9].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[10].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[0].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[1].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[2].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[3].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[4].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[5].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[6].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[7].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[8].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.cli[9].ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:BarChart" name="queueLength:timeavg"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.0/@items.7 //@datasets/@datasets.0/@items.0/@items.9 //@datasets/@datasets.0/@items.1/@items.7 //@datasets/@datasets.0/@items.1/@items.9 //@datasets/@datasets.0/@items.2/@items.19 //@datasets/@datasets.0/@items.3/@items.19 //@datasets/@datasets.0/@items.4/@items.22"/>
+  </chartSheets>
+</scave:Analysis>

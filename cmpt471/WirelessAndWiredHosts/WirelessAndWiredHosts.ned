@@ -15,6 +15,7 @@ network WirelessAndWiredHosts
     parameters:
         double per = default(0);
         int n;
+        
     types:
         channel C extends DatarateChannel
         {

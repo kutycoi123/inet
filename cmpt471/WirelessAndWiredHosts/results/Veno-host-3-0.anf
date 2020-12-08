@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/inet/cmpt471/WirelessAndWiredHosts/results/Veno-host-3-0-*.vec"/>
+    <inputs name="/inet/cmpt471/WirelessAndWiredHosts/results/Veno-host-3-0-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="end_to_end_delay">
+      <items xsi:type="scave:Add" filterPattern="attr:configname(Veno-host-3) AND attr:runnumber(99) AND module(WirelessAndWiredHosts.wirelessHost1[0].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+      <items xsi:type="scave:HistogramChart" name="endToEndDelay:histogram WirelessAndWiredHosts.wirelessHost1[0].app[0]"/>
+      <items xsi:type="scave:LineChart"/>
+    </datasets>
+    <datasets name="endToEndDelay:histogram WirelessAndWiredHosts.wirelessHost1[0].app[0]"/>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.1 //@datasets/@datasets.0/@items.2"/>
+  </chartSheets>
+</scave:Analysis>
