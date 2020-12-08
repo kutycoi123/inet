@@ -74,7 +74,7 @@
         <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.srv.app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
         <items xsi:type="scave:HistogramChart" name="endToEndDelay:histogram"/>
       </items>
-      <items xsi:type="scave:Group">
+      <items xsi:type="scave:Group" name="Queue Length">
         <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
         <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[1].ppp.queue) AND name(queueLength:timeavg)"/>
         <items xsi:type="scave:Add" filterPattern="module(MultipleClientsServer.r1.ppp[2].ppp.queue) AND name(queueLength:timeavg)"/>
