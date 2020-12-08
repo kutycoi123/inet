@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/inet/cmpt471/WirelessAndWiredHosts/results/Reno-0-*.vec"/>
+    <inputs name="/inet/cmpt471/WirelessAndWiredHosts/results/Reno-0-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="cwnd:vector ">
+      <items xsi:type="scave:Group" name="cwnd ">
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wiredHost2.tcp.conn-4) AND name(cwnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="cwnd:vector "/>
+        <items xsi:type="scave:Apply" operation="mean"/>
+        <items xsi:type="scave:LineChart" name="cwnd mean" lineNameFormat=""/>
+      </items>
+      <items xsi:type="scave:Group" name="End to End Delay">
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wirelessHost1[0].app[0].thread_5) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wirelessHost1[0].app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wiredHost2.app[0]) AND name(endToEndDelay:histogram)" type="HISTOGRAM"/>
+        <items xsi:type="scave:HistogramChart" name="endToEndDelay:histogram"/>
+      </items>
+      <items xsi:type="scave:Group" name="Queue Length">
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wirelessHost1[0].wlan[0].mac.dcf.channelAccess.pendingQueue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wirelessHost1[0].wlan[0].mac.dcf.channelAccess.inProgressFrames) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wiredHost2.ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.router.ppp[0].ppp.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.router.eth[0].mac.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.accessPoint.eth[0].mac.queue) AND name(queueLength:timeavg)"/>
+        <items xsi:type="scave:BarChart" name="queueLength:timeavg"/>
+      </items>
+      <items xsi:type="scave:Group" name="rcv Window">
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wiredHost2.tcp.conn-4) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wirelessHost1[0].tcp.conn-5) AND name(rcvWnd:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="rcvWnd:vector"/>
+      </items>
+      <items xsi:type="scave:Group" name="RTT">
+        <items xsi:type="scave:Add" filterPattern="module(WirelessAndWiredHosts.wiredHost2.tcp.conn-4) AND name(rtt:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="rtt:vector " lineNameFormat=""/>
+        <items xsi:type="scave:Apply" operation="mean"/>
+        <items xsi:type="scave:LineChart" name="RTT mean" lineNameFormat=""/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.0/@items.1 //@datasets/@datasets.0/@items.0/@items.3 //@datasets/@datasets.0/@items.1/@items.3 //@datasets/@datasets.0/@items.2/@items.8 //@datasets/@datasets.0/@items.3/@items.2 //@datasets/@datasets.0/@items.4/@items.1 //@datasets/@datasets.0/@items.4/@items.3"/>
+  </chartSheets>
+</scave:Analysis>
